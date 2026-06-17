@@ -1,0 +1,242 @@
+---SECTION_1_WIN_RATE_RR_DISTRIBUTION---
+Overall Win Rate: 54.30%
+Overall Average RR of Winning Trades: 2.00
+% of Overall Wins with RR>=1:1: 99.01%
+% of Overall Wins with RR>=1:2: 74.26%
+% of Overall Wins with RR>=1:3: 0.50%
+% of Overall Wins with RR>=1:4+: 0.50%
+Overall Longest Consecutive Losing Streak: 8
+
+--- Per Pair Metrics ---
+
+Pair: AUDUSD
+  Win Rate: 52.94%
+  Average RR of Winning Trades: 2.00
+  % of Wins with RR>=1:1: 100.00%
+  % of Wins with RR>=1:2: 100.00%
+  % of Wins with RR>=1:3: 0.00%
+  % of Wins with RR>=1:4+: 0.00%
+  Longest Consecutive Losing Streak: 4
+
+Pair: EURUSD
+  Win Rate: 43.10%
+  Average RR of Winning Trades: 2.00
+  % of Wins with RR>=1:1: 100.00%
+  % of Wins with RR>=1:2: 100.00%
+  % of Wins with RR>=1:3: 0.00%
+  % of Wins with RR>=1:4+: 0.00%
+  Longest Consecutive Losing Streak: 5
+
+Pair: GBPUSD
+  Win Rate: 62.50%
+  Average RR of Winning Trades: 2.00
+  % of Wins with RR>=1:1: 100.00%
+  % of Wins with RR>=1:2: 100.00%
+  % of Wins with RR>=1:3: 0.00%
+  % of Wins with RR>=1:4+: 0.00%
+  Longest Consecutive Losing Streak: 4
+
+Pair: NZDUSD
+  Win Rate: 48.84%
+  Average RR of Winning Trades: 2.00
+  % of Wins with RR>=1:1: 100.00%
+  % of Wins with RR>=1:2: 100.00%
+  % of Wins with RR>=1:3: 0.00%
+  % of Wins with RR>=1:4+: 0.00%
+  Longest Consecutive Losing Streak: 5
+
+Pair: USDCHF
+  Win Rate: 39.47%
+  Average RR of Winning Trades: 1.91
+  % of Wins with RR>=1:1: 93.33%
+  % of Wins with RR>=1:2: 93.33%
+  % of Wins with RR>=1:3: 0.00%
+  % of Wins with RR>=1:4+: 0.00%
+  Longest Consecutive Losing Streak: 8
+
+Pair: USDJPY
+  Win Rate: 64.71%
+  Average RR of Winning Trades: 2.04
+  % of Wins with RR>=1:1: 98.18%
+  % of Wins with RR>=1:2: 7.27%
+  % of Wins with RR>=1:3: 1.82%
+  % of Wins with RR>=1:4+: 1.82%
+  Longest Consecutive Losing Streak: 5
+
+---SECTION_2_DAILY_P&L_DISTRIBUTION---
+Daily Net P&L:
+Date,P&L
+2026-03-02,2700.00
+2026-03-03,2700.00
+2026-03-04,900.00
+2026-03-05,2400.00
+2026-03-06,1500.00
+2026-03-08,300.00
+2026-03-09,3600.00
+2026-03-10,2400.00
+2026-03-11,1500.00
+2026-03-12,1500.00
+2026-03-13,900.00
+2026-03-15,1200.00
+2026-03-16,1800.00
+2026-03-17,-1500.00
+2026-03-18,-0.00
+2026-03-19,1500.00
+2026-03-20,1800.00
+2026-03-23,3650.68
+2026-03-24,-900.00
+2026-03-25,-600.00
+2026-03-26,-900.00
+2026-03-27,-0.00
+2026-03-30,2400.00
+2026-03-31,2400.00
+2026-04-01,2400.00
+2026-04-02,1800.00
+2026-04-06,-0.00
+2026-04-07,2700.00
+2026-04-08,1500.00
+2026-04-09,300.00
+2026-04-10,600.00
+2026-04-12,600.00
+2026-04-13,2700.00
+2026-04-14,0.00
+2026-04-15,300.00
+2026-04-16,-600.00
+2026-04-17,2100.00
+2026-04-19,1200.00
+2026-04-20,-600.00
+2026-04-21,900.00
+2026-04-23,1500.00
+2026-04-24,600.00
+2026-04-27,300.00
+2026-04-28,300.00
+2026-04-29,0.00
+2026-04-30,7183.39
+2026-05-01,1588.29
+2026-05-04,2489.36
+2026-05-05,300.00
+2026-05-06,1165.93
+2026-05-07,-300.00
+2026-05-08,-300.00
+2026-05-12,1500.00
+2026-05-14,2400.00
+2026-05-15,0.00
+2026-05-18,1200.00
+2026-05-19,-600.00
+2026-05-20,0.00
+2026-05-21,0.00
+2026-05-25,600.00
+2026-05-26,600.00
+2026-05-27,0.00
+2026-05-28,2513.00
+2026-05-29,-21.00
+
+
+Maximum Daily Loss: $-1500.00
+Average Daily Profit (winning days): $1529.81
+Median Daily Profit (winning days): $1500.00
+Number of days with profit $0-$15: 5
+Number of days with profit >$15: 45
+Maximum Consecutive Losing Days: 4
+
+---SECTION_3_SIMULATION_HARD_LIMITS---
+Does account reach $100 profit? Yes
+If yes, how many trading days? 8
+Maximum drawdown during simulation: $25.00
+Number of days hitting $15 profit cap: 36
+Number of days hitting $28 loss cap: 0
+
+Daily Balance Progression:
+Date,Balance
+2026-03-02,1015.00
+2026-03-03,1030.00
+2026-03-04,1045.00
+2026-03-05,1060.00
+2026-03-06,1075.00
+2026-03-08,1080.00
+2026-03-09,1095.00
+2026-03-10,1110.00
+2026-03-11,1125.00
+2026-03-12,1140.00
+2026-03-13,1155.00
+2026-03-15,1170.00
+2026-03-16,1185.00
+2026-03-17,1160.00
+2026-03-18,1175.00
+2026-03-19,1190.00
+2026-03-20,1205.00
+2026-03-23,1220.00
+2026-03-24,1235.00
+2026-03-25,1225.00
+2026-03-26,1210.00
+2026-03-27,1210.00
+2026-03-30,1225.00
+2026-03-31,1240.00
+2026-04-01,1255.00
+2026-04-02,1270.00
+2026-04-06,1270.00
+2026-04-07,1285.00
+2026-04-08,1300.00
+2026-04-09,1305.00
+2026-04-10,1315.00
+2026-04-12,1325.00
+2026-04-13,1340.00
+2026-04-14,1340.00
+2026-04-15,1345.00
+2026-04-16,1335.00
+2026-04-17,1350.00
+2026-04-19,1365.00
+2026-04-20,1355.00
+2026-04-21,1370.00
+2026-04-23,1385.00
+2026-04-24,1395.00
+2026-04-27,1400.00
+2026-04-28,1405.00
+2026-04-29,1405.00
+2026-04-30,1420.00
+2026-05-01,1435.00
+2026-05-04,1450.00
+2026-05-05,1455.00
+2026-05-06,1470.00
+2026-05-07,1465.00
+2026-05-08,1460.00
+2026-05-12,1475.00
+2026-05-14,1490.00
+2026-05-15,1490.00
+2026-05-18,1505.00
+2026-05-19,1495.00
+2026-05-20,1495.00
+2026-05-21,1495.00
+2026-05-25,1505.00
+2026-05-26,1515.00
+2026-05-27,1515.00
+2026-05-28,1530.00
+2026-05-29,1525.00
+
+
+---SECTION_4_COSTS_ANALYSIS---
+Average Spread in Pips per Pair (Assumed):
+  AUDUSD: 1.50 pips
+  EURUSD: 1.20 pips
+  GBPUSD: 1.80 pips
+  NZDUSD: 1.60 pips
+  USDCHF: 1.70 pips
+  USDJPY: 1.50 pips
+
+Average Commission per trade (in $ for 0.05 lot, Assumed): $0.70
+Estimated Slippage ($ for 0.05 lot, Assumed): $0.50
+
+Net Average Profit per Winning Trade after costs (for 0.05 lot, based on $10 reward and assumed costs): $8.03
+Minimum lot size to have positive net profit after costs: 0.05 lot
+
+---SECTION_5_MONTE_CARLO_PROBABILITY---
+Probability of success (reaching $100 profit): 99.94%
+Probability of hitting $50 loss limit: 0.06%
+Expected median number of trading days to reach $100: 12
+10th percentile days to reach $100: 8
+90th percentile days to reach $100: 18
+
+---SECTION_6_FINAL_RECOMMENDATIONS---
+Is it realistic to pass this challenge with $5 risk / $10 reward? Yes
+Should USDCHF be completely excluded? Yes (Win rate is significantly lower than overall average)
+What is the single biggest risk factor? (Based on current metrics, risks appear manageable, but continuous monitoring of drawdown and losing streaks is advised.)

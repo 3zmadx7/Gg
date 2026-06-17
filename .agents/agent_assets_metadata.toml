@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "uqHUgZ2T67iSeeDzj-TeK"
+uri = "file://AGENT_MEMORY.md"
+type = "text"
+title = "Agent Memory File"

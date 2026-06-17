@@ -1,0 +1,54 @@
+{
+  "pair": "NZDUSD",
+  "selected_by": "composite_score_with_filters",
+  "recommendation": "yes",
+  "config": {
+    "confidence_threshold": 0.55,
+    "risk_reward": 1.5,
+    "atr_stop_multiplier": 1.0,
+    "train_months": 3,
+    "timeframe": "M5",
+    "model_spec": "three_month_3m",
+    "sample_weight_multiplier": 1.0,
+    "xgb_weight": 1.0,
+    "rf_weight": 1.0,
+    "xgb_params": {
+      "learning_rate": 0.06,
+      "max_depth": 4,
+      "n_estimators": 180,
+      "n_jobs": -1,
+      "subsample": 0.8
+    },
+    "rf_params": {
+      "max_depth": 8,
+      "min_samples_leaf": 4,
+      "n_estimators": 180,
+      "n_jobs": -1
+    }
+  },
+  "metrics": {
+    "trial": 25,
+    "pair": "NZDUSD",
+    "model_spec": "three_month_3m",
+    "train_months": 3,
+    "timeframe": "M5",
+    "confidence": 0.55,
+    "rr": 1.5,
+    "atr_mult": 1.0,
+    "sample_weight_multiplier": 1.0,
+    "xgb_weight": 1.0,
+    "rf_weight": 1.0,
+    "xgb_params": "{\"learning_rate\": 0.06, \"max_depth\": 4, \"n_estimators\": 180, \"n_jobs\": -1, \"subsample\": 0.8}",
+    "rf_params": "{\"max_depth\": 8, \"min_samples_leaf\": 4, \"n_estimators\": 180, \"n_jobs\": -1}",
+    "total_return_pct": 50.509999999998925,
+    "total_trades": 30,
+    "win_rate": 63.33333333333333,
+    "profit_factor": 2.530606060606027,
+    "max_drawdown": -10.041841004184132,
+    "sharpe_ratio": 7.463162931308496,
+    "sortino_ratio": 4.701928153020712e+16,
+    "net_profit": 5050.999999999894,
+    "valid": true,
+    "composite_score": 2.2486150548061588
+  }
+}

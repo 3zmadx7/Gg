@@ -1,0 +1,91 @@
+Read replit.md fully (especially Phase 6 — Signal Bot Discussion and Phase 5 — Deployment Plan). Then read the LATEST HANDOFF section in AGENT_MEMORY.md.
+
+Your task: Build a production-ready multi-pair Telegram signal bot. This is the final feature before live deployment.
+
+WHAT TO BUILD — one new script: signal_bot.py
+
+A Python script that runs in an infinite loop, waking up every 5 minutes. On each wake-up it checks all 4 currency pairs, and if a signal is found, sends a formatted Telegram message.
+
+THE 4 PORTFOLIO PAIRS AND THEIR OPTIMIZED SETTINGS:
+
+Read each pair's exact settings from optimized_results/{PAIR}/best_config.json. The key fields are:
+
+config.confidence_threshold — minimum confidence to fire a signal
+config.risk_reward — R:R ratio for TP calculation
+config.atr_stop_multiplier — ATR multiplier for SL calculation
+config.train_months — how many months of history to use for training
+config.timeframe — always M5
+Pairs: EURUSD, GBPUSD, USDJPY, NZDUSD
+
+LIVE DATA SOURCE — OANDA API (same one already used in the project):
+
+Credentials are already saved as environment variables:
+
+os.environ["OANDA_TOKEN"]
+os.environ["OANDA_BASE_URL"]
+OANDA instrument names: EUR_USD, GBP_USD, USD_JPY, NZD_USD
+
+To get the latest M5 candles:
+
+GET {OANDA_BASE_URL}/instruments/{instrument}/candles
+Header: Authorization: Bearer {OANDA_TOKEN}
+Params: granularity=M5, count=500, price=M
+Response: candles[].mid.{o,h,l,c} and candles[].volume. Only use rows where complete=true.
+Return a DataFrame with columns: time, open, high, low, close, volume (time as UTC datetime, tz-naive).
+
+HOW THE BOT WORKS — step by step:
+
+On startup, for each pair: fetch the last 3 months of M5 data from OANDA, train the model using the same feature engineering and ensemble logic already in the project (ml/ensemble.py, ml/model_manager.py), save to a temp folder models_live/{PAIR}/
+Every 5 minutes: fetch the latest 500 M5 candles from OANDA for each pair
+Compute the same 115 features the model was trained on (use the existing feature engineering from the pipeline files — look at pipeline_oanda.py for reference)
+Run ensemble.predict_proba(X) on the latest completed candle
+If the predicted class is BUY (1) or SELL (2) AND confidence >= the pair's threshold → fire a signal
+Send the Telegram message (format below)
+Implement a cooldown: do not send a second signal for the same pair within 60 minutes, regardless of what the model says
+TELEGRAM MESSAGE FORMAT:
+
+🟢 BUY EUR/USD
+━━━━━━━━━━━━━━
+Entry:  1.15320
+SL:     1.15020  (−30 pips)
+TP:     1.15920  (+60 pips)
+Confidence: 78.4%
+Time: 14:30 UTC
+Use 🟢 for BUY, 🔴 for SELL
+SL = entry − (ATR × atr_stop_multiplier) for BUY, entry + same for SELL
+TP = entry + (SL distance × risk_reward) for BUY, entry − same for SELL
+ATR = 14-period ATR on M5
+Pips = price distance × 10000 for non-JPY pairs, × 100 for JPY pairs
+Telegram credentials from env vars: os.environ["TELEGRAM_BOT_TOKEN"] and os.environ["TELEGRAM_CHAT_ID"]
+Send via https://api.telegram.org/bot{TOKEN}/sendMessage
+ALSO BUILD: test_bot.py
+
+A separate test script that:
+
+Verifies OANDA API connection works and can fetch candles for all 4 pairs
+Verifies Telegram connection — sends one test message: ✅ Bot connection test successful. EURUSD, GBPUSD, USDJPY, NZDUSD loaded and ready.
+Does a dry-run signal check on each pair using the latest candle — prints what signal (if any) would be sent, without actually sending it
+Prints a summary table: pair | latest close | model confidence | signal | would_fire?
+Run test_bot.py after building everything and confirm all 4 pairs pass.
+
+ALSO PREPARE FOR DEPLOYMENT:
+
+Create these 3 files for Railway deployment:
+
+requirements_bot.txt — only the packages signal_bot.py needs (requests, pandas, numpy, xgboost, scikit-learn, joblib, pyarrow — no dukascopy, no lightgbm, no LSTM)
+Procfile — one line: worker: python3 signal_bot.py
+README_DEPLOY.md — plain English instructions: what env vars to paste in Railway (OANDA_TOKEN, OANDA_BASE_URL, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID), how to connect GitHub to Railway, and what to expect once live
+STRICT RULES:
+
+Read credentials ONLY from os.environ — never hardcode any token or key in any file
+Do NOT touch results/, models/, results_oanda/, models_oanda/, optimized_results/ — read only
+Do NOT re-download or re-run any pipeline — all data and configs already exist
+signal_bot.py must handle OANDA API errors gracefully — if one pair fails to fetch, skip it and continue with the others, do not crash
+Log all activity to console with timestamps: [14:32 UTC] GBPUSD — BUY signal fired, confidence 81.2%
+The bot must start up cleanly in under 2 minutes (training 4 models at startup)
+WHEN DONE:
+
+Confirm test_bot.py ran and all 4 pairs passed
+Show the test message that was sent to Telegram
+Update AGENT_MEMORY.md with a Session 11 log
+Update the session history table in replit.md"**

@@ -1,0 +1,8 @@
+requests
+pandas
+numpy
+xgboost
+scikit-learn
+joblib
+pyarrow
+rich

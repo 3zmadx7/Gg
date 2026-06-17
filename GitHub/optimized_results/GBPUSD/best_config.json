@@ -1,0 +1,54 @@
+{
+  "pair": "GBPUSD",
+  "selected_by": "composite_score_with_filters",
+  "recommendation": "yes",
+  "config": {
+    "confidence_threshold": 0.68,
+    "risk_reward": 2.5,
+    "atr_stop_multiplier": 2.0,
+    "train_months": 2,
+    "timeframe": "M5",
+    "model_spec": "conservative_2m",
+    "sample_weight_multiplier": 1.0,
+    "xgb_weight": 1.0,
+    "rf_weight": 1.0,
+    "xgb_params": {
+      "learning_rate": 0.08,
+      "max_depth": 3,
+      "n_estimators": 120,
+      "n_jobs": -1,
+      "subsample": 0.8
+    },
+    "rf_params": {
+      "max_depth": 6,
+      "min_samples_leaf": 5,
+      "n_estimators": 140,
+      "n_jobs": -1
+    }
+  },
+  "metrics": {
+    "trial": 11,
+    "pair": "GBPUSD",
+    "model_spec": "conservative_2m",
+    "train_months": 2,
+    "timeframe": "M5",
+    "confidence": 0.68,
+    "rr": 2.5,
+    "atr_mult": 2.0,
+    "sample_weight_multiplier": 1.0,
+    "xgb_weight": 1.0,
+    "rf_weight": 1.0,
+    "xgb_params": "{\"learning_rate\": 0.08, \"max_depth\": 3, \"n_estimators\": 120, \"n_jobs\": -1, \"subsample\": 0.8}",
+    "rf_params": "{\"max_depth\": 6, \"min_samples_leaf\": 5, \"n_estimators\": 140, \"n_jobs\": -1}",
+    "total_return_pct": 239.55785714286228,
+    "total_trades": 66,
+    "win_rate": 63.63636363636363,
+    "profit_factor": 4.130773682835005,
+    "max_drawdown": -6.419158426756589,
+    "sharpe_ratio": 11.145337429409768,
+    "sortino_ratio": 90.4030033131869,
+    "net_profit": 23955.7857142862,
+    "valid": true,
+    "composite_score": 3.679016320477505
+  }
+}

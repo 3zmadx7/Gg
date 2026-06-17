@@ -1,0 +1,54 @@
+{
+  "pair": "USDCHF",
+  "selected_by": "composite_score_with_filters",
+  "recommendation": "maybe",
+  "config": {
+    "confidence_threshold": 0.68,
+    "risk_reward": 2.5,
+    "atr_stop_multiplier": 2.0,
+    "train_months": 2,
+    "timeframe": "M5",
+    "model_spec": "baseline_2m",
+    "sample_weight_multiplier": 1.0,
+    "xgb_weight": 1.0,
+    "rf_weight": 1.0,
+    "xgb_params": {
+      "learning_rate": 0.05,
+      "max_depth": 6,
+      "n_estimators": 160,
+      "n_jobs": -1,
+      "subsample": 0.8
+    },
+    "rf_params": {
+      "max_depth": 8,
+      "min_samples_leaf": 5,
+      "n_estimators": 160,
+      "n_jobs": -1
+    }
+  },
+  "metrics": {
+    "trial": 5,
+    "pair": "USDCHF",
+    "model_spec": "baseline_2m",
+    "train_months": 2,
+    "timeframe": "M5",
+    "confidence": 0.68,
+    "rr": 2.5,
+    "atr_mult": 2.0,
+    "sample_weight_multiplier": 1.0,
+    "xgb_weight": 1.0,
+    "rf_weight": 1.0,
+    "xgb_params": "{\"learning_rate\": 0.05, \"max_depth\": 6, \"n_estimators\": 160, \"n_jobs\": -1, \"subsample\": 0.8}",
+    "rf_params": "{\"max_depth\": 8, \"min_samples_leaf\": 5, \"n_estimators\": 160, \"n_jobs\": -1}",
+    "total_return_pct": 69.38999999999928,
+    "total_trades": 31,
+    "win_rate": 51.61290322580645,
+    "profit_factor": 2.5419999999999825,
+    "max_drawdown": -12.396694214876055,
+    "sharpe_ratio": 6.87960165171681,
+    "sortino_ratio": 3.125540448574725e+16,
+    "net_profit": 6938.999999999927,
+    "valid": true,
+    "composite_score": 1.875993223022911
+  }
+}

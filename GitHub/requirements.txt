@@ -1,0 +1,35 @@
+
+aiohttp
+aiohttp>=3.9.0
+# Async HTTP
+# black, flake8, mypy  # Optional dev dependencies
+# Core
+# Development
+joblib
+joblib>=1.3.0
+lightgbm
+lightgbm>=4.0.0
+# Machine Learning
+# MetaTrader5>=5.0.45
+# MT5 Integration (Windows-only, optional for CI)
+numpy
+numpy>=1.24.0
+# openai>=1.0.0  # Uncomment if using OpenAI-compatible API
+# Optional: LLM
+pandas
+pandas>=2.0.0
+prowler
+pyarrow
+pyarrow>=12.0.0
+python-dotenv
+python-dotenv>=1.0.0
+reports
+requests
+rich
+rich>=13.0.0
+scikit-learn
+scikit-learn>=1.3.0
+telegram
+xgboost
+xgboost>=2.0.0
+yfinance

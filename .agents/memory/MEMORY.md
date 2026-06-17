@@ -1,0 +1,3 @@
+- [Signal bot label mapping](signal-bot-labels.md) — model labels are 0=BUY, 1=SELL, 2=HOLD (NOT 0=HOLD,1=BUY,2=SELL); check `pred in (0,1)` for signals.
+- [Project module split](module-paths.md) — data/ml/features/core/utils live in Git/; learning/decision/intelligence/etc. live at project root; both must be in sys.path.
+- [best_config.json structure](best-config-structure.md) — confidence_threshold/risk_reward/etc. are under a nested "config" key, not top-level.

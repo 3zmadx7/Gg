@@ -1,0 +1,119 @@
+modules = ["python-3.12", "nodejs-20"]
+[agent]
+expertMode = true
+stack = "BEST_EFFORT_FALLBACK"
+
+[nix]
+channel = "stable-25_05"
+packages = ["arrow-cpp", "glibcLocales", "ocl-icd", "opencl-headers", "pkg-config"]
+
+[userenv]
+
+[userenv.shared]
+ACCOUNT_BALANCE = "10000"
+ACCOUNT_CURRENCY = "USD"
+ACCOUNT_LEVERAGE = "100"
+TRADING_MODE = "simulation"
+IS_DEMO = "true"
+ALLOW_REAL_TRADING = "false"
+LEARN_ONLY = "false"
+TRADING_PAIRS = "EURUSD"
+TRADING_TIMEFRAMES = "M5,M15,M30,H1,H4"
+ADAPTIVE_TIMEFRAME = "true"
+USE_MULTI_TIMEFRAME = "true"
+MAX_RISK_PCT = "0.005"
+MAX_DAILY_LOSS_PCT = "0.03"
+MAX_OPEN_POSITIONS = "1"
+RR_RATIO = "2.0"
+USE_DYNAMIC_SL = "true"
+USE_DYNAMIC_TP = "true"
+SL_PIPS = "30"
+TP_PIPS = "60"
+TRAILING_ACTIVATE = "20"
+TRAILING_DISTANCE = "10"
+USE_DYNAMIC_RISK = "true"
+MIN_CONFIDENCE = "0.40"
+MIN_MARKET_SCORE = "40"
+ALLOW_NO_TRADE = "true"
+MAX_SPREAD_PIPS = "3.0"
+ENABLE_SELF_LEARNING = "true"
+ENABLE_AUTO_RETRAIN = "false"
+RETRAIN_AFTER_TRADES = "50"
+MODEL_VERSIONING = "true"
+CONCEPT_DRIFT_DETECTION = "false"
+ADAPTIVE_MEMORY = "false"
+WEIGHT_NEW_DATA = "true"
+ENABLE_XGBOOST = "true"
+ENABLE_RANDOM_FOREST = "true"
+ENABLE_LIGHTGBM = "false"
+ENABLE_LSTM = "false"
+ENABLE_VOTING_ENSEMBLE = "true"
+CONFIRM_TRAINING = "yes"
+HISTORICAL_YEARS = "1"
+ENABLE_MARKET_STRUCTURE = "true"
+ENABLE_SUPPORT_RESISTANCE = "true"
+ENABLE_BREAKOUT_DETECTION = "true"
+ENABLE_BREAKDOWN_DETECTION = "true"
+ENABLE_PRICE_ACTION = "true"
+ENABLE_CANDLE_PATTERN = "true"
+ENABLE_VOLATILITY_ANALYSIS = "true"
+ENABLE_TREND_ANALYSIS = "true"
+ENABLE_MARKET_REGIME = "true"
+NEWS_ENABLED = "false"
+ENABLE_LLM = "false"
+TELEGRAM_ENABLED = "false"
+ENABLE_WALK_FORWARD_TEST = "false"
+ENABLE_MONTE_CARLO_TEST = "false"
+ENABLE_OUT_OF_SAMPLE_TEST = "false"
+LOG_LEVEL = "INFO"
+SAVE_AI_REASONING = "false"
+SAVE_TRADE_HISTORY = "true"
+SAVE_MARKET_STATE = "false"
+SAVE_DECISION_LOG = "false"
+SHOW_AI_CONFIDENCE = "true"
+SHOW_MARKET_SCORE = "true"
+SHOW_REGIME = "true"
+SHOW_MODEL_VERSION = "true"
+SHOW_LEARNING_STATUS = "true"
+OANDA_TOKEN = "37ee33b35f88e073a08d533849f7a24b-524c89ef15f36cfe532f0918a6aee4c2"
+OANDA_BASE_URL = "https://api-fxpractice.oanda.com/v3"
+TELEGRAM_BOT_TOKEN = "7887167602:AAEmpIny8aLfno4D-LbmEaP4hAjENKDdaoA"
+TELEGRAM_CHAT_ID = "5244655536"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Run Pipeline 2026"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Walk-Forward Backtest"
+
+[[workflows.workflow]]
+name = "Run Pipeline 2026"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 pipeline_2026.py --backtest-only"
+
+[[workflows.workflow]]
+name = "Walk-Forward Backtest"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 walkforward_backtest.py"
+
+[workflows.workflow.metadata]
+outputType = "console"
